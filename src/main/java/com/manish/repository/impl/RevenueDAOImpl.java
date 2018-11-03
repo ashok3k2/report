@@ -1,7 +1,7 @@
 package com.manish.repository.impl;
 
-import com.manish.model.Order;
-import com.manish.repository.OrderDAO;
+import com.manish.model.Revenue;
+import com.manish.repository.RevenueDAO;
 import com.manish.specification.SearchCriteria;
 import org.springframework.stereotype.Repository;
 
@@ -14,19 +14,19 @@ import javax.persistence.criteria.Root;
 import java.util.List;
 
 /**
- * Created by ashok.maurya on 27/10/18.
+ * Created by ashok.maurya on 03/11/18.
  */
 @Repository
-public class OrderDAOImpl implements OrderDAO {
+public class RevenueDAOImpl implements RevenueDAO {
 
     @PersistenceContext
     private EntityManager entityManager;
 
     @Override
-    public List<Order> searchOrders(List<SearchCriteria> params) {
+    public List<Revenue> searchOrders(List<SearchCriteria> params) {
         final CriteriaBuilder builder = entityManager.getCriteriaBuilder();
-        final CriteriaQuery<Order> query = builder.createQuery(Order.class);
-        final Root r = query.from(Order.class);
+        final CriteriaQuery<Revenue> query = builder.createQuery(Revenue.class);
+        final Root r = query.from(Revenue.class);
 
         Predicate predicate = builder.conjunction();
 
